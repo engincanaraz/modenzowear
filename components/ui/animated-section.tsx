@@ -41,7 +41,7 @@ export function AnimatedSection({
 
   // Animasyon türlerine göre varyantlar
   const getAnimationVariants = (type: string) => {
-    const variants = {
+    const variants: Record<string, any> = {
       fadeUp: {
         hidden: { opacity: 0, y: 60 },
         visible: { 
