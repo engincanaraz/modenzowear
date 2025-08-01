@@ -1,0 +1,26 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import { MessageCircle } from "lucide-react";
+
+export function WhatsAppButton() {
+  const handleWhatsAppClick = () => {
+    const phoneNumber = "905317112134"; // Gerçek telefon numarası ile değiştirin
+    const message = "Merhaba! MODENZO WEAR hakkında bilgi almak istiyorum.";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50">
+      <Button
+        onClick={handleWhatsAppClick}
+        size="icon"
+        className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+        aria-label="WhatsApp ile iletişime geç"
+      >
+        <MessageCircle className="h-7 w-7 text-white" />
+      </Button>
+    </div>
+  );
+} 

@@ -1,0 +1,18 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Important pages - high priority for crawlers
+Allow: /en
+Allow: /tr
+
+# Emphasize main content
+Allow: /$
+Allow: /en$
+
+# Sitemap location
+Sitemap: 
+
+# Crawl delay to prevent overloading server
+Crawl-delay: 1
