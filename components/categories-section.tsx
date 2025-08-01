@@ -40,7 +40,7 @@ export function CategoriesSection() {
     {
       id: "aksesuar",
       name: "Çanta & Aksesuar",
-      description: "Çantalar, cüzdanlar, kemerler, saatler",
+      description: "Çantalar, cüzdanlar, kemerler, saatler ve gözlükler",
       icon: Watch,
     },
   ];
