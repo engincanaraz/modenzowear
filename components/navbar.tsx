@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Search, ShoppingCart, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useScrollProgress } from "@/hooks/use-scroll-animation";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const scrollProgress = useScrollProgress();
 
   useEffect(() => {
     setIsMounted(true);
@@ -68,33 +70,39 @@ export function Navbar() {
   }
   
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out",
-        isScrolled
-          ? "navbar-scrolled py-2 shadow-lg"
-          : "bg-black py-3 sm:py-4"
-      )}
-    >
+    <>
+      {/* Scroll Progress Indicator */}
+      <div className="fixed top-0 left-0 h-1 bg-gradient-to-r from-black to-gray-600 z-50 transition-all duration-300" style={{ width: `${scrollProgress * 100}%`, opacity: 1 }} />
+      
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out opacity-100",
+          isScrolled
+            ? "navbar-scrolled py-2 shadow-lg"
+            : "bg-black py-3 sm:py-4"
+        )}
+        style={{ opacity: 1 }}
+      >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <button 
           onClick={() => scrollToSection('home')}
-          className="flex items-center space-x-2 sm:space-x-3 transition-smooth hover:scale-105"
+          className="flex items-center space-x-2 sm:space-x-3 hover:scale-105 transition-transform duration-200"
         >
-          
-          <span className="text-lg sm:text-xl font-bold text-white font-serif">MODENZO WEAR</span>
+          <span className="text-lg sm:text-xl font-bold text-white font-serif opacity-100" style={{ opacity: 1 }}>
+            MODENZO WEAR
+          </span>
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-6 lg:space-x-8">
+        <nav className="hidden lg:flex items-center space-x-6 lg:space-x-8 opacity-100" style={{ opacity: 1 }}>
           {navItems.map((item, index) => (
             <button
               key={item.name}
               onClick={() => scrollToSection(item.href.replace('#', ''))}
-              className="text-white/80 hover:text-white transition-all duration-300 text-sm lg:text-base relative group"
+              className="text-white/80 hover:text-white transition-all duration-300 text-sm lg:text-base relative group hover:-translate-y-0.5"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 h-0.5 bg-white w-0 group-hover:w-full transition-all duration-300"></span>
             </button>
           ))}
         </nav>
@@ -148,30 +156,36 @@ export function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-black/95 backdrop-blur-md shadow-md animate-in slide-in-from-top-2 duration-300">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+        <div className="lg:hidden bg-black/95 backdrop-blur-md shadow-md transition-all duration-300 opacity-100" style={{ opacity: 1 }}>
+          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4 opacity-100" style={{ opacity: 1 }}>
             {navItems.map((item, index) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href.replace('#', ''))}
-                className="text-white/80 hover:text-white transition-all duration-300 py-3 text-left text-base stagger-item"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="text-white/80 hover:text-white transition-all duration-300 py-3 text-left text-base hover:translate-x-2"
+                style={{ 
+                  opacity: 1,
+                  animationDelay: `${index * 0.1}s`
+                }}
               >
                 {item.name}
               </button>
             ))}
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-black transition-smooth mt-4 btn-hover"
-              asChild
-            >
-              <a href="https://shopier.com/modenzowear" target="_blank" rel="noopener noreferrer">
-                Mağazayı Ziyaret Et
-              </a>
-            </Button>
+            <div className="opacity-100" style={{ opacity: 1 }}>
+              <Button
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-black transition-all duration-300 mt-4 w-full"
+                asChild
+              >
+                <a href="https://shopier.com/modenzowear" target="_blank" rel="noopener noreferrer">
+                  Mağazayı Ziyaret Et
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       )}
     </header>
+    </>
   );
 }

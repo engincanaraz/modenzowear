@@ -250,3 +250,163 @@ canvas {
   -ms-user-select: none;
   -webkit-touch-callout: none;
 }
+
+/* Enhanced animations with better performance */
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+    transform: scale(1.05);
+  }
+}
+
+.float-animation {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+/* Micro-interactions */
+.micro-bounce {
+  transition: transform 0.1s ease;
+}
+
+.micro-bounce:active {
+  transform: scale(0.95);
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Fallback animations for when JS fails */
+.fallback-visible {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.fallback-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.fallback-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.fallback-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.fallback-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.fallback-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.fallback-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Ensure content is visible by default if all animations fail */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    opacity: 1 !important;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* EMERGENCY: Show all content immediately */
+* {
+  opacity: 1 !important;
+}
+
+/* Progressive enhancement - başlangıçta tüm içerik görünür */
+body * {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Animation süreleri için CSS değişkenleri */
+:root {
+  --animation-delay-1: 0.1s;
+  --animation-delay-2: 0.2s;
+  --animation-delay-3: 0.3s;
+  --animation-delay-4: 0.4s;
+  --animation-delay-5: 0.5s;
+  --animation-delay-6: 0.6s;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* CSS-only progressive animations */
+@keyframes cssSlideUp {
+  from {
+    opacity: 0.8;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to main content sections */
+section {
+  animation: cssSlideUp 0.6s ease-out forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+
+/* Grid items animation */
+.grid > * {
+  animation: cssSlideUp 0.4s ease-out forwards;
+}
+
+.grid > *:nth-child(1) { animation-delay: 0.1s; }
+.grid > *:nth-child(2) { animation-delay: 0.2s; }
+.grid > *:nth-child(3) { animation-delay: 0.3s; }
+.grid > *:nth-child(4) { animation-delay: 0.4s; }
+.grid > *:nth-child(5) { animation-delay: 0.5s; }
+.grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Emergency visibility after 1 second - just in case */
+@keyframes emergencyShow {
+  to { opacity: 1 !important; transform: none !important; }
+}
+
+body {
+  animation: emergencyShow 0.1s ease-out 1s forwards;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .float-animation,
+  .pulse-glow,
+  .stagger-item,
+  .text-reveal,
+  .fade-in-up {
+    animation: none;
+    opacity: 1 !important;
+  }
+  
+  .transition-smooth {
+    transition: none;
+  }
+}

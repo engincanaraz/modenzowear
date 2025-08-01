@@ -1,6 +1,8 @@
 "use client";
 
 import { Truck, RefreshCw, Shield, Clock, Users, Package } from "lucide-react";
+import { ClientOnlyAnimation, ClientOnlyGrid } from "@/components/ui/client-only-animation";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -30,42 +32,68 @@ const features = [
   },
   {
     icon: Package,
-    title: "Ücretsiz Kargo",
-    description: "500₺ üzeri alışverişlerde ücretsiz kargo"
+    title: "Güvenli Kargo",
+    description: "Güvenli kargo hizmeti"
   }
 ];
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <ClientOnlyAnimation className="text-center mb-16">
           <h2 className="text-4xl font-bold text-black mb-4">
             Neden MODENZO WEAR?
           </h2>
           <p className="text-lg text-black/60 max-w-3xl mx-auto">
             Premium kalite, hızlı teslimat ve müşteri memnuniyeti odaklı hizmet anlayışımız
           </p>
-        </div>
+        </ClientOnlyAnimation>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ClientOnlyGrid 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          staggerDelay={0.15}
+        >
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-black mb-3">
+              <motion.div 
+                key={index} 
+                className="text-center group cursor-pointer"
+                whileHover={{ 
+                  y: -8,
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <motion.div 
+                  className="w-16 h-16 bg-black rounded-lg flex items-center justify-center mx-auto mb-4 relative overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: [0, -5, 5, 0],
+                    transition: { duration: 0.4 }
+                  }}
+                >
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-gray-800 to-black"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ 
+                      x: "100%",
+                      transition: { duration: 0.6, ease: "easeInOut" }
+                    }}
+                  />
+                  <IconComponent className="h-8 w-8 text-white relative z-10" />
+                </motion.div>
+                <h3 className="text-xl font-semibold text-black mb-3 group-hover:text-gray-700 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-black/60 leading-relaxed">
+                <p className="text-black/60 leading-relaxed group-hover:text-black/80 transition-colors duration-300">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </ClientOnlyGrid>
       </div>
     </section>
   );

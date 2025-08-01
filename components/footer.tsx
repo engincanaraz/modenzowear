@@ -158,7 +158,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © 2024 MODENZO WEAR. Tüm hakları saklıdır.
+            © 2025 MODENZO WEAR. Tüm hakları saklıdır.
           </p>
         </div>
       </div>
