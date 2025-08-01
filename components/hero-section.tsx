@@ -16,12 +16,12 @@ export function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black text-white">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-black text-white pt-20 sm:pt-0">
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Logo */}
-          <div className="mb-8 fade-in-up">
-            <div className="w-32 h-32 mx-auto mb-6 relative img-hover">
+          <div className="mb-6 sm:mb-8 fade-in-up">
+            <div className="w-20 h-20 sm:w-32 sm:h-32 mx-auto mb-4 sm:mb-6 relative img-hover">
               <Image
                 src="/images/logo.png"
                 alt="MODENZO WEAR Logo"
@@ -31,31 +31,31 @@ export function HeroSection() {
                 priority
               />
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-white mb-2 font-serif text-reveal">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-2 font-serif text-reveal">
               MODENZO
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 font-serif text-reveal" style={{ animationDelay: '0.2s' }}>
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 sm:mb-8 font-serif text-reveal" style={{ animationDelay: '0.2s' }}>
               WEAR
             </h2>
           </div>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto text-reveal" style={{ animationDelay: '0.4s' }}>
+          <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-12 max-w-3xl mx-auto text-reveal px-4" style={{ animationDelay: '0.4s' }}>
             Premium erkek giyimde sade ve modern çizgi
           </p>
           
           {/* Features */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto mb-12">
-            <div className="flex flex-col items-center stagger-item card-hover p-4 rounded-lg">
-              <Truck className="h-8 w-8 text-white mb-3 transition-smooth group-hover:scale-110" />
-              <h3 className="font-semibold text-white mb-1">Aynı Gün Kargo</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-4xl mx-auto mb-8 sm:mb-12 px-4">
+            <div className="flex flex-col items-center stagger-item card-hover p-3 sm:p-4 rounded-lg">
+              <Truck className="h-6 w-6 sm:h-8 sm:w-8 text-white mb-2 sm:mb-3 transition-smooth group-hover:scale-110" />
+              <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">Aynı Gün Kargo</h3>
             </div>
-            <div className="flex flex-col items-center stagger-item card-hover p-4 rounded-lg">
-              <RefreshCw className="h-8 w-8 text-white mb-3 transition-smooth group-hover:scale-110" />
-              <h3 className="font-semibold text-white mb-1">Kolay Değişim</h3>
+            <div className="flex flex-col items-center stagger-item card-hover p-3 sm:p-4 rounded-lg">
+              <RefreshCw className="h-6 w-6 sm:h-8 sm:w-8 text-white mb-2 sm:mb-3 transition-smooth group-hover:scale-110" />
+              <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">Kolay Değişim</h3>
             </div>
-            <div className="flex flex-col items-center stagger-item card-hover p-4 rounded-lg">
-              <Clock className="h-8 w-8 text-white mb-3 transition-smooth group-hover:scale-110" />
-              <h3 className="font-semibold text-white mb-1">10:00 - 22:00</h3>
+            <div className="flex flex-col items-center stagger-item card-hover p-3 sm:p-4 rounded-lg">
+              <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-white mb-2 sm:mb-3 transition-smooth group-hover:scale-110" />
+              <h3 className="font-semibold text-white mb-1 text-sm sm:text-base">10:00 - 22:00</h3>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export function HeroSection() {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-black hover:bg-black hover:text-white px-8 py-3 text-lg font-semibold transition-smooth btn-hover"
+              className="border-white text-black hover:bg-black hover:text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold transition-smooth btn-hover"
               asChild
             >
               <a href="https://shopier.com/modenzowear" target="_blank" rel="noopener noreferrer">
@@ -74,8 +74,8 @@ export function HeroSection() {
           </div>
 
           {/* Motto */}
-          <div className="max-w-3xl mx-auto fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed italic">
+          <div className="max-w-3xl mx-auto fade-in-up px-4" style={{ animationDelay: '0.6s' }}>
+            <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed italic">
               &ldquo;Erkek giyimde sadece stil değil, <strong>karakter</strong> de önemlidir. MODENZO WEAR ile <strong>kendinizi ifade edin</strong>.&rdquo;
             </p>
           </div>
