@@ -174,7 +174,7 @@ export function Navbar() {
             <div className="opacity-100" style={{ opacity: 1 }}>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black transition-all duration-300 mt-4 w-full"
+                className="border-white text-black hover:bg-white hover:text-black transition-all duration-300 mt-4 w-full"
                 asChild
               >
                 <a href="https://shopier.com/modenzowear" target="_blank" rel="noopener noreferrer">
