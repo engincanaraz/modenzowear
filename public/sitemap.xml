@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://engincanaraz.com/</loc>
-    <lastmod>2023-12-01</lastmod>
+    <loc>https://modenzowear.com/</loc>
+    <lastmod>2024-08-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://engincanaraz.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://engincanaraz.com/en" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://modenzowear.com/" />
     <image:image>
-      <image:loc>https://engincanaraz.com/images/profile.jpg</image:loc>
-      <image:title>Engincan Araz - Frontend Developer</image:title>
+      <image:loc>https://modenzowear.com/images/logo.png</image:loc>
+      <image:title>MODENZO WEAR - Premium Erkek Giyim Logo</image:title>
+      <image:caption>MODENZO WEAR Premium Erkek Giyim Mağazası</image:caption>
     </image:image>
   </url>
   <url>
-    <loc>https://engincanaraz.com/en</loc>
-    <lastmod>2023-12-01</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://modenzowear.com/#categories</loc>
+    <lastmod>2024-08-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://engincanaraz.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://engincanaraz.com/en" />
-    <image:image>
-      <image:loc>https://engincanaraz.com/images/profile.jpg</image:loc>
-      <image:title>Engincan Araz - Frontend Developer</image:title>
-    </image:image>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://modenzowear.com/#categories" />
+  </url>
+  <url>
+    <loc>https://modenzowear.com/#about</loc>
+    <lastmod>2024-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://modenzowear.com/#about" />
+  </url>
+  <url>
+    <loc>https://modenzowear.com/#contact</loc>
+    <lastmod>2024-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://modenzowear.com/#contact" />
   </url>
 </urlset>

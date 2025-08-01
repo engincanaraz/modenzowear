@@ -1,6 +1,6 @@
 {
-  "name": "Engincan Araz | Frontend Developer",
-  "short_name": "Engincan Araz",
+  "name": "MODENZO WEAR | Premium Erkek Giyim Mağazası",
+  "short_name": "MODENZO WEAR",
   "icons": [
     {
       "src": "/favicon-16x16.png",
@@ -16,11 +16,21 @@
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "display": "standalone",
   "start_url": "/",
-  "description": "Engincan Araz - Frontend Developer & Web Geliştirici. React, Next.js ve TailwindCSS ile modern web uygulamaları."
+  "description": "MODENZO WEAR - Premium erkek giyim mağazası. Polo t-shirt, gömlek, pantolon, ayakkabı, aksesuar ve parfüm. Aynı gün kargo, ücretsiz değişim."
 }
